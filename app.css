@@ -1,0 +1,31 @@
+.header {
+    display: table;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+
+    height: 250px;
+    overflow: hidden;
+}
+
+.head {
+    display: table-cell;
+    background-color: rgb(76, 31, 102);
+    justify-content: center;
+    position: relative;
+    width: auto;
+    overflow: hidden;
+}
+
+#logo {
+    position: absolute;
+    margin: auto;
+    top: -9999px;
+    left: -9999px;
+    right: -9999px;
+    bottom: -9999px;
+    /* background-color: white; */
+}
+#logo-head {
+    width:400px; 
+
+}
