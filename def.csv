@@ -1,0 +1,33 @@
+﻿player,lastName,position,team
+Arizona,Cardinals,DEF,ARI
+Atlanta,Falcons,DEF,ATL
+Baltimore,Ravens,DEF,BAL
+Buffalo,Bills,DEF,BUF
+Carolina,Panthers,DEF,CAR
+Chicago,Bears,DEF,CHI
+Cincinnati,Bengals,DEF,CIN
+Cleveland,Browns,DEF,CLE
+Dallas,Cowboys,DEF,DAL
+Denver,Broncos,DEF,DEN
+Detroit,Lions,DEF,DET
+Green Bay,Packers,DEF,GB
+Houston,Texans,DEF,HOU
+Indianapolis,Colts,DEF,IND
+Jacksonville,Jaguars,DEF,JAC
+Kansas City,Chiefs,DEF,KC
+Los Angeles,Chargers,DEF,LAC
+Los Angeles,Rams,DEF,LAR
+Las Vegas,Raiders,DEF,LV
+Miami,Dolphins,DEF,MIA
+Minnesota,Vikings,DEF,MIN
+New England,Patriots,DEF,NE
+New Orleans,Saints,DEF,NO
+New York,Giants,DEF,NYG
+New York,Jets,DEF,NYJ
+Philadelphia,Eagles,DEF,PHI
+Pittsburgh,Steelers,DEF,PIT
+Seattle,Seahawks,DEF,SEA
+San Francisco,49ers,DEF,SF
+Tampa Bay,Buccaneers,DEF,TB
+Tennessee,Titans,DEF,TEN
+Washington,Team,DEF,WAS

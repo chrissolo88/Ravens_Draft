@@ -5,23 +5,131 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="app.css">
-        <link rel="stylesheet" href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css" />
+        <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+
         <title>Ravens Roost Draft</title>
     </head>
     <body>
         <section class="header">
             <div class="head" id="left-head"></div>
             <div class="head" id="logo-head"><img id="logo" src="https://i.ibb.co/s5K9KDh/RR75.jpg" alt="RR75"></div>
-            <div class="head" id="right-head"></div>
+            <div class="head" id="right-head">
+                <form action="">
+                    <label for="teams"> # Of Teams: <span><input type="number" name="teams" id="teams" value="10"></span></label>
+                    <label for="rounds"># Of Rounds: <span><input type="number" name="rounds" id="rounds" value="15"></span></label>
+                    <input type="button" id="create" value="create">
+                </form>
+            </div>
         </section>
         <div id="content">
+            <div id="positions">
+                <div class="list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">QB</th>
+                            </tr>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>String</th>
+                            </tr>
+                        </thead>
+                        <tbody id="qb">
 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">WR</th>
+                            </tr>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>String</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wr">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">RB</th>
+                            </tr>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>String</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rb">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">TE</th>
+                            </tr>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>String</th>
+                            </tr>
+                        </thead>
+                        <tbody id="te">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">DEF</th>
+                            </tr>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>String</th>
+                            </tr>
+                        </thead>
+                        <tbody id="def">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">K</th>
+                            </tr>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>String</th>
+                            </tr>
+                        </thead>
+                        <tbody id="k">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="draft-table">
+
+            </div>
         </div>
-        <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.js"></script>
-        <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
-        <script src= "https://unpkg.com/jasmine-core/lib/jasmine-core/boot0.js"></script>
-        <script src= "https://unpkg.com/jasmine-core/lib/jasmine-core/boot1.js"></script>
         <script src="app.js"></script>
-        <script src="app.test.js"></script>
     </body>
 </html>
