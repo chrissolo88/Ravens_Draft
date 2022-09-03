@@ -7,7 +7,7 @@ const qbCsv = `player,lastName,position,team,string
     Tyler,Huntley,QB,BAL,2
     Josh,Allen,QB,BUF
     Matt,Barkley,QB,BUF,2
-    Baker,Mayfield,QB,CAR,
+    Baker,Mayfield,QB,CAR
     Sam,Darnold,QB,CAR,2
     Matt,Corral,QB,CAR,3
     Justin,Fields,QB,CHI
