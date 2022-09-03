@@ -5,13 +5,27 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="app.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald:wght@500&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+        <script src="lib/easytimer/dist/easytimer.min.js"></script>
 
         <title>Ravens Roost Draft</title>
     </head>
     <body>
         <section class="header">
-            <div class="head" id="left-head"></div>
+            <div class="head" id="left-head">
+                <!-- <div id="chronoExample">
+                    <div class="values">00:00:00</div>
+                    <div>
+                        <button class="startButton">Start</button>
+                        <button class="pauseButton" >Pause</button>
+                        <button class="stopButton">Stop</button>
+                        <button class="resetButton">Reset</button>
+                    </div>
+                </div> -->
+            </div>
             <div class="head" id="logo-head"><img id="logo" src="https://i.ibb.co/s5K9KDh/RR75.jpg" alt="RR75"></div>
             <div class="head" id="right-head">
                 <form action="">
@@ -126,8 +140,17 @@
                     </table>
                 </div>
             </div>
-            <div id="draft-table">
+            <div id="player-content">
+                <div id="insert">
+                </div>
+                <input type="button" id="draft" value="Draft!">
+            </div>
+            <div id="team-roster">
+                <table id="roster">
 
+                </table>
+            </div>
+            <div id="draft-table">
             </div>
         </div>
         <script src="app.js"></script>

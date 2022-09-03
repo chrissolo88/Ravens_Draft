@@ -1,74 +1,74 @@
-const qbCsv = `player,lastName,position,team
+const qbCsv = `player,lastName,position,team,string
     Kyler,Murray,QB,ARI
-    Trace,McSorley,QB,ARI
+    Trace,McSorley,QB,ARI,2
     Marcus,Mariota,QB,ATL
-    Desmond,Ridder,QB,ATL
+    Desmond,Ridder,QB,ATL,2
     Lamar,Jackson,QB,BAL
-    Tyler,Huntley,QB,BAL
+    Tyler,Huntley,QB,BAL,2
     Josh,Allen,QB,BUF
-    Matt,Barkley,QB,BUF
-    Baker,Mayfield,QB,CAR
-    Sam,Darnold,QB,CAR
-    Matt,Corral,QB,CAR
+    Matt,Barkley,QB,BUF,2
+    Baker,Mayfield,QB,CAR,
+    Sam,Darnold,QB,CAR,2
+    Matt,Corral,QB,CAR,3
     Justin,Fields,QB,CHI
-    Trevor,Siemian,QB,CHI
+    Trevor,Siemian,QB,CHI,2
     Joe,Burrow,QB,CIN
-    Brandon,Allen,QB,CIN
+    Brandon,Allen,QB,CIN,2
     Deshaun,Watson,QB,CLE
-    Jacoby,Brissett,QB,CLE
-    Joshua,Dobbs,QB,CLE
+    Jacoby,Brissett,QB,CLE,2
+    Joshua,Dobbs,QB,CLE,3
     Dak,Prescott,QB,DAL
-    Cooper,Rush,QB,DAL
-    Ben,DiNucci,QB,DAL
+    Cooper,Rush,QB,DAL,2
+    Ben,DiNucci,QB,DAL,3
     Russell,Wilson,QB,DEN
-    Brett,Rypien,QB,DEN
+    Brett,Rypien,QB,DEN,2
     Jared,Goff,QB,DET
-    Tim,Boyle,QB,DET
+    Tim,Boyle,QB,DET,2
     Aaron,Rodgers,QB,GB
-    Jordan,Love,QB,GB
+    Jordan,Love,QB,GB,2
     Davis,Mills,QB,HOU
     Matt,Ryan,QB,IND
     Trevor,Lawrence,QB,JAX
     Patrick,Mahomes,QB,KC
-    Chad,Henne,QB,KC
+    Chad,Henne,QB,KC,2
     Justin,Herbert,QB,LAC
     Matthew,Stafford,QB,LAR
-    John,Wolford,QB,LAR
+    John,Wolford,QB,LAR,2
     Derek,Carr,QB,LV
-    Nick,Mullens,QB,LV
-    Jarrett,Stidham,QB,LV
+    Nick,Mullens,QB,LV,2
+    Jarrett,Stidham,QB,LV,3
     Tua,Tagovailoa,QB,MIA
-    Teddy,Bridgewater,QB,MIA
+    Teddy,Bridgewater,QB,MIA,2
     Kirk,Cousins,QB,MIN
-    Kellen,Mond,QB,MIN
+    Kellen,Mond,QB,MIN,2
     Mac,Jones,QB,NE
-    Bailey,Zappe,QB,NE
+    Bailey,Zappe,QB,NE,2
     Jameis,Winston,QB,NO
-    Andy,Dalton,QB,NO
-    Ian,Book,QB,NO
+    Andy,Dalton,QB,NO,2
+    Ian,Book,QB,NO,3
     Daniel,Jones,QB,NYG
-    Tyrod,Taylor,QB,NYG
+    Tyrod,Taylor,QB,NYG,2
     Zach,Wilson,QB,NYJ
-    Mike,White,QB,NYJ
+    Mike,White,QB,NYJ,2
     Jalen,Hurts,QB,PHI
-    Gardner,Minshew,QB,PHI
+    Gardner,Minshew,QB,PHI,2
     Kenny,Pickett,QB,PIT
-    Mitchell,Trubisky,QB,PIT
-    Mason,Rudolph,QB,PIT
+    Mitchell,Trubisky,QB,PIT,2
+    Mason,Rudolph,QB,PIT,3
     Drew,Lock,QB,SEA
-    Geno,Smith,QB,SEA
+    Geno,Smith,QB,SEA,2
     Trey,Lance,QB,SF
-    Jimmy,Garoppolo,QB,SF
-    Brock,Purdy,QB,SF
+    Jimmy,Garoppolo,QB,SF,2
+    Brock,Purdy,QB,SF,3
     Tom,Brady,QB,TB
-    Kyle,Trask,QB,TB
+    Kyle,Trask,QB,TB,2
     Ryan,Tannehill,QB,TEN
-    Malik,Willis,QB,TEN
+    Malik,Willis,QB,TEN,2
     Carson,Wentz,QB,WAS
-    Taylor,Heinicke,QB,WAS
-    Colin,Kaepernick,QB,
-    Jake,Fromm,QB,
-    Anthony,Gordon,QB,`;
+    Taylor,Heinicke,QB,WAS,2
+    Colin,Kaepernick,QB,FA,0
+    Jake,Fromm,QB,FA,0
+    Anthony,Gordon,QB,FA,0`;
 const wrCsv = `player,lastName,position,team
 DeAndre,Hopkins,WR,ARI
 Marquise,Brown,WR,ARI
@@ -546,12 +546,47 @@ Jonathan,Garibay,K,
 Chris,Naggar,K,
 Matthew,Wright,K,
 Sam,Sloman,K,`;
-
-
+const imgObj = { 
+    ari:"https://content.sportslogos.net/logos/7/177/thumbs/kwth8f1cfa2sch5xhjjfaof90.gif", 
+    atl:"https://content.sportslogos.net/logos/7/173/thumbs/299.gif",
+    bal:"https://content.sportslogos.net/logos/7/153/thumbs/318.gif",
+    buf:"https://content.sportslogos.net/logos/7/149/thumbs/n0fd1z6xmhigb0eej3323ebwq.gif",
+    car:"https://content.sportslogos.net/logos/7/174/thumbs/f1wggq2k8ql88fe33jzhw641u.gif",
+    chi:"https://content.sportslogos.net/logos/7/169/thumbs/364.gif",
+    cin:"https://content.sportslogos.net/logos/7/154/thumbs/15420492021.gif", 
+    cle:"https://content.sportslogos.net/logos/7/155/thumbs/15578552015.gif",
+    dal:"https://content.sportslogos.net/logos/7/165/thumbs/406.gif",
+    den:"https://content.sportslogos.net/logos/7/161/thumbs/9ebzja2zfeigaziee8y605aqp.gif",
+    det:"https://content.sportslogos.net/logos/7/170/thumbs/17013982017.gif",
+    gb:"https://content.sportslogos.net/logos/7/171/thumbs/dcy03myfhffbki5d7il3.gif",
+    hou:"https://content.sportslogos.net/logos/7/157/thumbs/570.gif",
+    ind:"https://content.sportslogos.net/logos/7/158/thumbs/593.gif",
+    jac:"https://content.sportslogos.net/logos/7/159/thumbs/15988562013.gif",
+    kc:"https://content.sportslogos.net/logos/7/162/thumbs/857.gif",
+    lac:"https://content.sportslogos.net/logos/7/6446/thumbs/644616602020.gif",
+    lar:"https://content.sportslogos.net/logos/7/5941/thumbs/594183342020.gif",
+    lv:"https://content.sportslogos.net/logos/7/6708/thumbs/670885212020.gif",
+    mia:"https://content.sportslogos.net/logos/7/150/thumbs/15073062018.gif",
+    min:"https://content.sportslogos.net/logos/7/172/thumbs/17227042013.gif",
+    ne:"https://content.sportslogos.net/logos/7/151/thumbs/y71myf8mlwlk8lbgagh3fd5e0.gif",
+    no:"https://content.sportslogos.net/logos/7/175/thumbs/907.gif",
+    nyg:"https://content.sportslogos.net/logos/7/166/thumbs/919.gif",
+    nyj:"https://content.sportslogos.net/logos/7/152/thumbs/15291162019.gif",
+    phi:"https://content.sportslogos.net/logos/7/167/thumbs/960.gif",
+    pit:"https://content.sportslogos.net/logos/7/156/thumbs/970.gif",
+    sea:"https://content.sportslogos.net/logos/7/180/thumbs/pfiobtreaq7j0pzvadktsc6jv.gif",
+    sf:"https://content.sportslogos.net/logos/7/179/thumbs/17994552009.gif",
+    tb:"https://content.sportslogos.net/logos/7/176/thumbs/17683632020.gif",
+    ten:"https://content.sportslogos.net/logos/7/160/thumbs/1053.gif",
+    was:"https://content.sportslogos.net/logos/7/6832/thumbs/683260482022.gif"
+}
+let activePlayer ={};
+let pickCount = 1;
 window.addEventListener('load', (event) => {
     const btnCreateDraft = document.querySelector('#create')
+    const btnDraftPlayer = document.querySelector('#draft')
     btnCreateDraft.addEventListener('click', createDraftTable);
-    loadTables();
+    btnDraftPlayer.addEventListener('click', draftBtnClick);
   });
 
 function setTeamCount(teams) {
@@ -573,6 +608,7 @@ function setDraftPicks(rounds, teamsArr) {
 }
 
 function createDraftTable() {
+    loadTables();
     const draftTable = document.querySelector('#draft-table');
     const teams = document.querySelector('#teams');
     const rounds = document.querySelector('#rounds');
@@ -582,9 +618,10 @@ function createDraftTable() {
         const newDiv = document.createElement('div');
         newDiv.classList.add("pick")
         newDiv.innerHTML = `<h3>PICK# ${ind +1} || TEAM# ${val}</h3>
-        <div class="info" id="${val}"></div>`
+        <div class="info, team-${val}" id="${ind + 1}"></div>`
         draftTable.appendChild(newDiv);
     })
+    getTeamRoster();
 }
 
 function loadTables() {
@@ -620,9 +657,112 @@ function readCSV(str) {
     return arr.data
 }
 const selectPlayer = (event) => {
-    const playerRow = event.target.parentNode;
-    const name = playerRow.children[0].innerText;
-    const team = playerRow.children[1].innerText;
-    const pos = playerRow.parentNode.id
-    console.log(name,team,pos)
+    const playerRowEle = event.target.parentNode;
+    const name = playerRowEle.children[0].innerText;
+    const team = playerRowEle.children[1].innerText;
+    const pos = playerRowEle.parentNode.id
+    activePlayer = {
+        playerRowEle,
+        name,
+        team,
+        pos,
+    }
+    insertPlayerContent(activePlayer)
 }
+
+const insertPlayerContent = (activePlayer) => {
+    const {name,team,pos} = activePlayer
+    const teamImg = getLogo(team.toLowerCase());
+    const insertDiv = document.querySelector('#insert');
+    insertDiv.innerHTML = `
+    <div id="info">
+    <h2>${pos.toUpperCase()}</h2>
+    <h3>${name}</h3>
+    </div>
+    <div id="team-image">
+    <image src="${teamImg}">
+    </div>`;
+}
+
+const draftBtnClick = () => {
+    const {playerRowEle,name,team,pos} = activePlayer
+    if(confirm('Draft Player?')) {
+        playerRowEle.remove()
+        const teamImg = getLogo(team.toLowerCase());
+        const pickDiv = document.getElementById(`${pickCount}`)
+        pickDiv.innerHTML = `
+        <table>
+        <tr>
+        <td>${name}</td>
+        <td>${pos.toUpperCase()}</td>
+        <td><image class="team" src="${teamImg}"></td>
+        </tr>
+        </table>`;
+        pickCount++;
+        getTeamRoster();
+    } 
+} 
+function getTeamRoster() {
+    const activeDiv = document.getElementById(`${pickCount}`)
+    const activeTeam = activeDiv.classList[1];
+    const rosterList = document.querySelectorAll(`.${activeTeam}`)
+    const rosterTable = document.querySelector('#roster');
+    rosterTable.innerHTML = '';
+    for(let i = 0; i < rosterList.length; i++) {
+        let pick = rosterList[i].id;
+        let player = rosterList[i].textContent.trim();
+
+        const newTr = document.createElement('tr');
+        newTr.classList.add('ros');
+        newTr.innerHTML = `
+        <td>${activeTeam}: pick# ${pick} - ${player}</td>
+        `
+        console.log(newTr);
+        rosterTable.appendChild(newTr);
+    }
+}
+const getLogo = (strTeam) => imgLink = imgObj[strTeam];
+
+// var timer = new Timer();
+// timer.start({precision: 'seconds'});
+// timer.addEventListener('secondsUpdated', function (e) {
+//     $('#gettingValuesExample .days').html(timer.getTimeValues().days);
+//     $('#gettingValuesExample .hours').html(timer.getTimeValues().hours);
+//     $('#gettingValuesExample .minutes').html(timer.getTimeValues().minutes);
+//     $('#gettingValuesExample .seconds').html(timer.getTimeValues().seconds);
+//     $('#gettingValuesExample .secondTenths').html(timer.getTimeValues().secondTenths);
+
+//     $('#gettingTotalValuesExample .days').html(timer.getTotalTimeValues().days);
+//     $('#gettingTotalValuesExample .hours').html(timer.getTotalTimeValues().hours);
+//     $('#gettingTotalValuesExample .minutes').html(timer.getTotalTimeValues().minutes);
+//     $('#gettingTotalValuesExample .seconds').html(timer.getTotalTimeValues().seconds);
+//     $('#gettingTotalValuesExample .secondTenths').html(timer.getTotalTimeValues().secondTenths);
+// });
+// var timer = new Timer();
+// $('#chronoExample .startButton').click(function () {
+//     timer.start();
+// });
+
+// $('#chronoExample .pauseButton').click(function () {
+//     timer.pause();
+// });
+
+// $('#chronoExample .stopButton').click(function () {
+//     timer.stop();
+// });
+
+// $('#chronoExample .resetButton').click(function () {
+//     timer.reset();
+// });
+
+// timer.addEventListener('secondsUpdated', function (e) {
+//     $('#chronoExample .values').html(timer.getTimeValues().toString());
+// });
+
+// timer.addEventListener('started', function (e) {
+//     $('#chronoExample .values').html(timer.getTimeValues().toString());
+// });
+
+// timer.addEventListener('reset', function (e) {
+//     $('#chronoExample .values').html(timer.getTimeValues().toString());
+// });
